@@ -30,9 +30,11 @@ public class Locators2 {
 
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
 
-        driver.findElement(By.id("inputUsername")).sendKeys("rahul");
+        String name = "rahul";
 
-        driver.findElement(By.name("inputPassword")).sendKeys("rahulshettyacademy");
+        driver.findElement(By.id("inputUsername")).sendKeys(name);
+
+        driver.findElement(By.name("inputPassword")).sendKeys(name + "shettyacademy");
 
         driver.findElement(By.className("signInBtn")).click();
 
@@ -43,7 +45,7 @@ public class Locators2 {
         WebElement locator = driver.findElement(By.xpath("//p[text()='"+ expectedString + "']"));
         String actualString = locator.getText();
         Assert.assertEquals(actualString,expectedString);
-
+        Assert.assertEquals(driver.findElement(By.cssSelector("div[class='login-container'] h2")).getText(), "Hello " + name + ",");
 
 
     }
