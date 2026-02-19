@@ -23,6 +23,7 @@ public class Locators2 {
         final String CHROME_DRIVER = "webdriver.chrome.driver";
         System.setProperty(CHROME_DRIVER, System.getProperty("user.dir") + "/src/main/java/org/example/core/drivers/chromedriver.exe");
 
+        String name = "rahul";
 
         WebDriver driver = new ChromeDriver();
 
@@ -30,7 +31,7 @@ public class Locators2 {
 
         String password = getPassword(driver);
 
-        String name = "rahul";
+        driver.get("https://rahulshettyacademy.com/locatorspractice/");
 
         driver.findElement(By.id("inputUsername")).sendKeys(name);
 
@@ -38,29 +39,30 @@ public class Locators2 {
 
         driver.findElement(By.className("signInBtn")).click();
 
-        System.out.println(driver.findElement(By.xpath("//p[text()='You are successfully logged in.']")).getText());
+        Thread.sleep(2000);
 
-        String expectedString = "You are successfully logged in.";
+        System.out.println(driver.findElement(By.tagName("p")).getText());
 
-        WebElement locator = driver.findElement(By.xpath("//p[text()='"+ expectedString + "']"));
-        String actualString = locator.getText();
-        Assert.assertEquals(actualString,expectedString);
-        Assert.assertEquals(driver.findElement(By.cssSelector("div[class='login-container'] h2")).getText(), "Hello " + name + ",");
+        Assert.assertEquals(driver.findElement(By.tagName("p")).getText(), "You are successfully logged in.");
 
-        driver.findElement(By.xpath("//button[text()='Log Out']")).click();
+        Assert.assertEquals(driver.findElement(By.cssSelector("div[class='login-container'] h2")).getText(),"Hello "+name+",");
+
+        driver.findElement(By.xpath("//*[text()='Log Out']")).click();
 
         driver.close();
 
     }
 
     public static String getPassword(WebDriver driver) throws InterruptedException {
-        driver.get("https://rahulshettyacademy.com/locatorspractice/");
-        driver.findElement(By.xpath("//div[@class='forgot-pwd-btn-conainer']/button[1]")).click();
-        Thread.sleep(1000);
-        String passwordText = driver.findElement(By.cssSelector("form p")).getText();
 
-        String[] passwordSplit = passwordText.split("'");
-        String password = passwordSplit[1].split("'")[0];
+        driver.get("https://rahulshettyacademy.com/locatorspractice/");
+        driver.findElement(By.linkText("Forgot your password?")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
+        String passwordText =driver.findElement(By.cssSelector("form p")).getText();
+        String[] passwordArray = passwordText.split("'");
+        String password = passwordArray[1].split("'")[0];
+
         return password;
     }
 }
