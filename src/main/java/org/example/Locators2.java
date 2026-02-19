@@ -28,13 +28,13 @@ public class Locators2 {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        driver.get("https://rahulshettyacademy.com/locatorspractice/");
+        String password = getPassword(driver);
 
         String name = "rahul";
 
         driver.findElement(By.id("inputUsername")).sendKeys(name);
 
-        driver.findElement(By.name("inputPassword")).sendKeys(name + "shettyacademy");
+        driver.findElement(By.name("inputPassword")).sendKeys(password);
 
         driver.findElement(By.className("signInBtn")).click();
 
@@ -53,5 +53,14 @@ public class Locators2 {
 
     }
 
+    public static String getPassword(WebDriver driver) throws InterruptedException {
+        driver.get("https://rahulshettyacademy.com/locatorspractice/");
+        driver.findElement(By.xpath("//div[@class='forgot-pwd-btn-conainer']/button[1]")).click();
+        Thread.sleep(1000);
+        String passwordText = driver.findElement(By.cssSelector("form p")).getText();
 
+        String[] passwordSplit = passwordText.split("'");
+        String password = passwordSplit[1].split("'")[0];
+        return password;
+    }
 }
