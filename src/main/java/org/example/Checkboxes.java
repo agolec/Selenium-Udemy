@@ -1,6 +1,6 @@
 package org.example;
 
-import dev.failsafe.internal.util.Assert;
+import org.testng.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,7 +25,7 @@ public class Checkboxes {
         boolean expectedSelection = true;
         boolean actualSelection = seniorCitizen.isSelected();
 
-        Assert.isTrue(expectedSelection,"Error. Element not selected");
+        Assert.assertTrue(expectedSelection,"Error. Element not selected");
         System.out.println("end program");
 
         int expectedCheckboxCount = 6;
