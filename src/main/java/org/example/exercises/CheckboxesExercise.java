@@ -1,4 +1,4 @@
-package org.example;
+package org.example.exercises;
 
 import org.testng.Assert;
 import org.openqa.selenium.By;
