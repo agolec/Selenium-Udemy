@@ -1,5 +1,6 @@
 package alg.framework.base;
 
+import alg.framework.config.ConfigReader;
 import alg.framework.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -11,7 +12,7 @@ public class BaseTest {
     @BeforeMethod
     public void setup(){
         driver = DriverFactory.createDriver();
-        driver.get("https://saucedemo.com/");
+        driver.get(ConfigReader.getProperty("baseUrl"));
     }
 
     @AfterMethod
