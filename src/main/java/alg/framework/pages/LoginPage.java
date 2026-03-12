@@ -15,14 +15,14 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver){
         super(driver);
     }
-    public void enterUserName(String username){
-        driver.findElement(this.username).sendKeys(username);
+    public void enterUserName(String usernameText){
+        type(this.username,usernameText);
     }
-    public void enterPassword(String password){
-        driver.findElement(this.password).sendKeys(password);
+    public void enterPassword(String passwordText){
+        type(this.password,passwordText);
     }
     public void clickLogin(){
-        driver.findElement(this.loginButton).click();
+        click(this.loginButton);
     }
 
     public void loginToApplication(String username, String password){
