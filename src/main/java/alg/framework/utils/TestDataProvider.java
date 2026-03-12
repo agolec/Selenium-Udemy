@@ -6,18 +6,18 @@ public class TestDataProvider {
     @DataProvider(name = "validLogins")
     public Object[][] validLogins() {
         return new Object [][] {
-                {"standard_user", "secret_sauce"},
-                {"locked_out_user","secret_sauce"},
-                {"problem_user","secret_sauce"}
+                {new LoginTestData("standard_user", "secret_sauce",true)},
+                {new LoginTestData("problem_user","secret_sauce", true)}
         };
     }
     @DataProvider(name = "invalidLogins")
     public static Object[][] invalidLogins(){
         return new Object[][] {
-                {"standard_user","wrongpass"},
-                {"standard_user",""},
-                {"","secret_sauce"},
-                {"",""}
+                {new LoginTestData("standard_user","wrongpass",false)},
+                {new LoginTestData("standard_user","",false)},
+                {new LoginTestData("locked_out_user","secret_sauce",false)},
+                {new LoginTestData("","secret_sauce",false)},
+                {new LoginTestData("","",false)}
         };
     }
 }
