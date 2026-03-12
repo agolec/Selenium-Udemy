@@ -24,4 +24,7 @@ public class BasePage {
     protected String getText(By locator){
         return driver.findElement(locator).getText();
     }
+    protected boolean isElementDisplayed(By locator){
+        return driver.findElement(locator).isDisplayed();
+    }
 }
