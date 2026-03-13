@@ -4,9 +4,7 @@ import alg.framework.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends BasePage {
-
-    private WebDriver driver;
+public class LoginPage  extends BasePage {
 
     private By username = By.id("user-name");
     private By password = By.id("password");

@@ -1,5 +1,7 @@
 package alg.framework.config;
 
+import alg.framework.driver.DriverType;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,5 +27,9 @@ public class ConfigReader {
     }
     public static String getProperty(String key){
         return properties.getProperty(key);
+    }
+    public static DriverType getBrowser(){
+        String browser = properties.getProperty("browser");
+        return DriverType.valueOf(browser.toUpperCase());
     }
 }
