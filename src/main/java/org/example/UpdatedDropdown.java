@@ -16,6 +16,8 @@ public class UpdatedDropdown {
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 
+        driver.findElement(By.cssSelector("input[id*='IndArm'")).click(); // * is a regular expression to match upon partial text of the id tag's value.
+
         driver.findElement(By.id("divpaxinfo")).click();
         Thread.sleep(2000);
 
