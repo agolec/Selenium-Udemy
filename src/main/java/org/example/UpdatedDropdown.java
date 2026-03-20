@@ -2,9 +2,12 @@ package org.example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+
+import java.util.List;
 
 
 public class UpdatedDropdown {
@@ -16,8 +19,13 @@ public class UpdatedDropdown {
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 
-        driver.findElement(By.cssSelector("input[id*='IndArm'")).click(); // * is a regular expression to match upon partial text of the id tag's value.
-
+        WebElement element = driver.findElement(By.cssSelector("input[id*='IndArm'")); // * is a regular expression to match upon partial text of the id tag's value.
+        element.click();
+        if(element.isSelected()){
+            System.out.println("You found it!");
+        }
+        List<WebElement> checkboxes = driver.findElements(By.cssSelector("input[type='checkbox'"));
+        System.out.println(checkboxes.size());
         driver.findElement(By.id("divpaxinfo")).click();
         Thread.sleep(2000);
 
