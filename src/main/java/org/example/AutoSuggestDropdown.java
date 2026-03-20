@@ -1,7 +1,6 @@
 package org.example;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,7 +29,10 @@ public class AutoSuggestDropdown {
         //li[class..... will allow you to find every element that matches this css.
         List<WebElement> dropdownOptions = driver.findElements(By.cssSelector("li[class='ui-menu-item] a"));
 
-        for(WebElement option: dropdownOptions){
+        selectFromAutoSuggestDropdown(dropdownOptions);
+    }
+    public static void selectFromAutoSuggestDropdown(List<WebElement> dropdownoptions){
+        for(WebElement option: dropdownoptions){
             if(option.getText().equalsIgnoreCase("india")){
                 option.click();
                 break;
