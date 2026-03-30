@@ -1,4 +1,4 @@
-package org.example;
+package org.example.sandbox;
 
 import java.time.Duration;
 
