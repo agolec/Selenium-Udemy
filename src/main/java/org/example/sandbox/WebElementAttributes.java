@@ -1,4 +1,4 @@
-package org.example;
+package org.example.sandbox;
 
 import org.example.config.Config;
 import org.openqa.selenium.By;

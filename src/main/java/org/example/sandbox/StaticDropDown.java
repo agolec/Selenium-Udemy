@@ -1,4 +1,4 @@
-package org.example;
+package org.example.sandbox;
 
 import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;

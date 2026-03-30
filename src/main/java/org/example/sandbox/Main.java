@@ -1,4 +1,4 @@
-package org.example;
+package org.example.sandbox;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
