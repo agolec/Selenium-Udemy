@@ -11,6 +11,6 @@ public class InventoryPage extends BasePage {
         super(driver);
     }
     public boolean isInventoryPageDisplayed(){
-        return isElementDisplayed(inventoryContainer);
+        return isDisplayed(inventoryContainer);
     }
 }

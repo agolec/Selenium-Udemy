@@ -26,4 +26,7 @@ public class ConfigReader {
     public static String getProperty(String key){
         return properties.getProperty(key);
     }
+    public static int getExplicitWaitDuration(){
+        return Integer.parseInt(System.getProperty("explicit.wait","10"));
+    }
 }
