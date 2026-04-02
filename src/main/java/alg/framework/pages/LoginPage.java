@@ -33,6 +33,6 @@ public class LoginPage extends BasePage {
     }
 
     public boolean isErrorDisplayed() {
-        return isElementDisplayed(this.loginErrorMessage);
+        return isDisplayed(this.loginErrorMessage);
     }
 }
