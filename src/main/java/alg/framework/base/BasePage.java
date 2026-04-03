@@ -6,6 +6,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -61,5 +62,10 @@ public class BasePage {
         } catch(TimeoutException e){
             return false;
         }
+    }
+    protected void selectDropdown(By locator, String visibleText){
+        WebElement dropdown = waitForClickable(locator);
+        Select select = new Select(dropdown);
+        select.selectByVisibleText(visibleText);
     }
 }
