@@ -1,13 +1,12 @@
 package org.example.sandbox;
 
-import org.example.config.Config;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-public class WebElementAttributes extends Config {
+public class WebElementAttributes {
     ChromeDriver driver;
     final String LOCATOR_PRACTICE = "https://rahulshettyacademy.com/dropdownsPractise/";
     final String RETURN_DATE_CSS = "div.picker-second button";

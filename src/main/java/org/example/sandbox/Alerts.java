@@ -4,9 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import org.example.config.Config;
 
-public class Alerts extends Config {
+public class Alerts {
     ChromeDriver driver;
     @Test
     void alertsTest(){

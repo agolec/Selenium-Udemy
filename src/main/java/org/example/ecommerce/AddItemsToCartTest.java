@@ -1,6 +1,5 @@
 package org.example.ecommerce;
 
-import org.example.config.Config;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +9,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class AddItemsToCartTest extends Config {
+public class AddItemsToCartTest  {
     WebDriver driver;
     @Test
     void test(){
