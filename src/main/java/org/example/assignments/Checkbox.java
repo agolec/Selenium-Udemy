@@ -1,6 +1,5 @@
 package org.example.assignments;
 
-import org.example.config.Config;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class Checkbox extends Config {
+public class Checkbox {
 
 
     public static void main(String[] args){

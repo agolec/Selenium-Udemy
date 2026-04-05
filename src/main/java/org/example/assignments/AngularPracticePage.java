@@ -1,6 +1,5 @@
 package org.example.assignments;
 
-import org.example.config.Config;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class AngularPracticePage extends Config {
+public class AngularPracticePage {
     ChromeDriver driver;
     private final String name = "input.form-control[name='name']";
     private String email = ".form-control[name='email']";

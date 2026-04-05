@@ -3,7 +3,6 @@ package org.example.assignments.synchronization;
 import org.example.assignments.synchronization.pages.CheckoutPage;
 import org.example.assignments.synchronization.pages.LoginPage;
 import org.example.assignments.synchronization.pages.ProductPage;
-import org.example.config.Config;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -12,7 +11,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SyncronizationWithExplicitWait extends Config {
+public class SyncronizationWithExplicitWait {
     WebDriver driver;
     @Test
     void loginTest(){
