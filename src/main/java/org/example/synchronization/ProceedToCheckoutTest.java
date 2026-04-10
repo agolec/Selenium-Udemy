@@ -1,5 +1,4 @@
 package org.example.synchronization;
-import org.example.config.Config;
 import org.example.ecommerce.AddItemsToCartTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class ProceedToCheckoutTest extends Config {
+public class ProceedToCheckoutTest {
     WebDriver driver;
     @Test
     public void testCheckout(){
