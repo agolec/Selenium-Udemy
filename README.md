@@ -2,7 +2,7 @@
 
 A scalable Selenium automation framework built with Java and TestNG, implementing the Page Object Model (POM) and a Driver Factory pattern to support cross-browser testing and maintainable test design.
 
-## 2) 🚀 Start Here
+## 2) Getting Started
 
 For evaluation, begin in the `alg/framework/` package.
 
