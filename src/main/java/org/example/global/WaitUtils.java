@@ -1,5 +1,6 @@
 package org.example.global;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,8 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class WaitUtils {
-    static void waitUntilElementVisible(WebDriver driver, int durationOfSeconds, WebElement element){
+    public static WebElement waitUntilElementVisible(WebDriver driver, int durationOfSeconds, By locator){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(durationOfSeconds));
-        wait.until(ExpectedConditions.visibilityOf(element));
+
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
     }
 }
